@@ -1,6 +1,7 @@
 {
     "plugins": [
-        "chapter-fold"
+        "chapter-fold",
+        "katex"
     ],
     "pluginsConfig": {
         "chapter-fold": {}
