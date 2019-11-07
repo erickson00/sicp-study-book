@@ -35,7 +35,7 @@
   (fib-iter 1 0 n))
 
 ; 换零钱
-(define (count-change amount)
+define (count-change amount)
   (cc amount 5))
 (define (cc amount kinds-of-coins)
   (cond ((= amount 0) 1)
@@ -51,7 +51,6 @@
         ((= kinds-of-coins 3) 10)
         ((= kinds-of-coins 4) 25)
         ((= kinds-of-coins 5) 50)))
-
 
 ; 测试
 (factorial 4)

@@ -1,5 +1,7 @@
 #lang planet neil/sicp
 
+; 构造过程的抽象-程序设计的基本元素
+
 ; 依赖
 (define (square x) (* x x))
 (define (abs x)

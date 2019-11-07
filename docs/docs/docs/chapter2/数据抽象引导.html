@@ -298,6 +298,46 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x6570;&#x636E;&#x62BD;&#x8C61;&#x5F15;&#x5BFC;">&#x6570;&#x636E;&#x62BD;&#x8C61;&#x5F15;&#x5BFC;</h1>
+<p>&#x4EE3;&#x7801;&#x53C2;&#x8003;:<a href="https://github.com/erickson00/sicp-study-book/blob/master/docs/code/chapter2/2.1.rkt" target="_blank">chapter2/2.1.rkt</a></p>
+<h2 id="&#x6F14;&#x793A;&#x6709;&#x7406;&#x6570;&#x7684;&#x6784;&#x5EFA;">&#x6F14;&#x793A;&#x6709;&#x7406;&#x6570;&#x7684;&#x6784;&#x5EFA;</h2>
+<pre><code class="lang-lisp">; &#x5B9A;&#x4E49;&#x6709;&#x7406;&#x6570;
+(define (make-rat n d) (cons n d))
+(define (numer x) (car x))
+(define (denom x) (cdr x))
+; &#x52A0;&#x51CF;&#x4E58;&#x9664;
+define (add-rat x y)
+  (make-rat (+ (* (numer x) (denom y))
+               (* (numer y) (denom x)))
+            (* (denom x) (denom y))))
+(define (sub-rat x y)
+  (make-rat (- (* (numer x) (denom y))
+               (* (numer y) (denom x)))
+            (* (denom x) (denom y))))
+(define (mul-rat x y)
+  (make-rat (* (numer x) (numer y))
+            (* (denom x) (denom y))))
+(define (div-rat x y)
+  (make-rat (* (numer x) (denom y))
+            (* (denom x) (numer y))))
+(define (equal-rat? x y)
+  (= (* (numer x) (denom y))
+     (* (numer y) (denom x))))
+</code></pre>
+<h3 id="&#x5F15;&#x7533;&#x51FA;lisp&#x4E2D;&#x7684;&#x5E8F;&#x5BF9;">&#x5F15;&#x7533;&#x51FA;lisp&#x4E2D;&#x7684;&#x5E8F;&#x5BF9;</h3>
+<p>(cons a  b): &#x5E8F;&#x5BF9;&#x542B;&#x6709;&#x4E24;&#x4E2A;&#x5143;&#x7D20;: a,b</p>
+<p>car cons1: &#x53D6;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</p>
+<p>cdr cons1: &#x53D6;&#x7B2C;&#x4E8C;&#x4E2A;&#x5143;&#x7D20;</p>
+<p>&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x6709;&#x7406;&#x6570;</p>
+<pre><code class="lang-lisp">(<span class="hljs-name">define</span> (<span class="hljs-name">make-rat</span> n d) (<span class="hljs-name">cons</span> n d))
+(<span class="hljs-name">define</span> (<span class="hljs-name">numer</span> x) (<span class="hljs-name">car</span> x))
+(<span class="hljs-name">define</span> (<span class="hljs-name">denom</span> x) (<span class="hljs-name">cdr</span> x))
+</code></pre>
+<h2 id="&#x62BD;&#x8C61;&#x5C4F;&#x969C;">&#x62BD;&#x8C61;&#x5C4F;&#x969C;</h2>
+<p>&#x5408;&#x7406;&#x7684;&#x5206;&#x5C42;</p>
+<h2 id="&#x6570;&#x636E;&#x610F;&#x5473;&#x7740;&#x4EC0;&#x4E48;">&#x6570;&#x636E;&#x610F;&#x5473;&#x7740;&#x4EC0;&#x4E48;</h2>
+<p>&#x6784;&#x9020;&#x51FD;&#x6570;/&#x9009;&#x62E9;&#x51FD;&#x6570; &#x5373; &#x6784;&#x9020;&#x5668;/set(&#x53EF;&#x4EE5;&#x5B58;)/get(&#x53EF;&#x4EE5;&#x53D6;)</p>
+<p>&#x4E0D;&#x7BA1;&#x662F;&#x4EC0;&#x4E48;&#x6211;&#x4EEC;&#x603B;&#x662F;&#x901A;&#x8FC7;&#x5B83;&#x53EF;&#x4EE5;&#x505A;&#x4EC0;&#x4E48;&#x6765;&#x5B9A;&#x4E49;&#x7684;</p>
+<h2 id="&#x7EC3;&#x4E60;">&#x7EC3;&#x4E60;</h2>
 
                                 
                                 </section>
@@ -341,7 +381,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"数据抽象引导","level":"1.3.1","depth":2,"next":{"title":"层次性数据和闭包性质","level":"1.3.2","depth":2,"path":"chapter2/层次性数据和闭包性质.md","ref":"chapter2/层次性数据和闭包性质.md","articles":[]},"previous":{"title":"构造数据的抽象","level":"1.3","depth":1,"path":"chapter2/构造数据的抽象.md","ref":"chapter2/构造数据的抽象.md","articles":[{"title":"数据抽象引导","level":"1.3.1","depth":2,"path":"chapter2/数据抽象引导.md","ref":"chapter2/数据抽象引导.md","articles":[]},{"title":"层次性数据和闭包性质","level":"1.3.2","depth":2,"path":"chapter2/层次性数据和闭包性质.md","ref":"chapter2/层次性数据和闭包性质.md","articles":[]},{"title":"数据抽象引导","level":"1.3.3","depth":2,"path":"chapter2/符号数据.md","ref":"chapter2/符号数据.md","articles":[]},{"title":"数据抽象引导","level":"1.3.4","depth":2,"path":"chapter2/抽象数据的多重表示.md","ref":"chapter2/抽象数据的多重表示.md","articles":[]},{"title":"数据抽象引导","level":"1.3.5","depth":2,"path":"chapter2/带有通用型操作的系统.md","ref":"chapter2/带有通用型操作的系统.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold","katex"],"pluginsConfig":{"chapter-fold":{},"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter2/数据抽象引导.md","mtime":"2019-10-29T09:43:18.483Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-07T08:54:05.273Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"数据抽象引导","level":"1.3.1","depth":2,"next":{"title":"层次性数据和闭包性质","level":"1.3.2","depth":2,"path":"chapter2/层次性数据和闭包性质.md","ref":"chapter2/层次性数据和闭包性质.md","articles":[]},"previous":{"title":"构造数据的抽象","level":"1.3","depth":1,"path":"chapter2/构造数据的抽象.md","ref":"chapter2/构造数据的抽象.md","articles":[{"title":"数据抽象引导","level":"1.3.1","depth":2,"path":"chapter2/数据抽象引导.md","ref":"chapter2/数据抽象引导.md","articles":[]},{"title":"层次性数据和闭包性质","level":"1.3.2","depth":2,"path":"chapter2/层次性数据和闭包性质.md","ref":"chapter2/层次性数据和闭包性质.md","articles":[]},{"title":"数据抽象引导","level":"1.3.3","depth":2,"path":"chapter2/符号数据.md","ref":"chapter2/符号数据.md","articles":[]},{"title":"数据抽象引导","level":"1.3.4","depth":2,"path":"chapter2/抽象数据的多重表示.md","ref":"chapter2/抽象数据的多重表示.md","articles":[]},{"title":"数据抽象引导","level":"1.3.5","depth":2,"path":"chapter2/带有通用型操作的系统.md","ref":"chapter2/带有通用型操作的系统.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold","katex"],"pluginsConfig":{"chapter-fold":{},"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter2/数据抽象引导.md","mtime":"2019-11-07T09:55:20.503Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-07T10:11:41.269Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
